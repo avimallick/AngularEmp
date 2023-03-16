@@ -1,0 +1,37 @@
+<p>empadd works!</p>
+
+
+<div>
+    <form #addForm="ngForm" (submit)="AddNew()">
+        <div>
+            Eid:
+            <input type="number" name="eid" [(ngModel)]="e.Eid" required>
+            Ename:
+            <input type="text" name="Ename" [(ngModel)]="e.Ename" required>
+            Salary:
+            <input type="number" name="sal" min="2000" max="9000" #sal="ngModel" [(ngModel)]="e.Salary" required>
+            Date of Joining:
+            <input type="date" name="doj" [(ngModel)]="e.Doj" required>
+            Department:
+            <div *ngFor="let dt of d">
+                <input type="radio" name="deptid" [value]="dt" [(ngModel)]="e.Edept">
+                {{dt.Dname}}
+            </div>
+            Skill 1
+            <div *ngFor="let skill of s">
+                <input type="radio" name="deptid1" [value]="skill" [(ngModel)]="e.Eskill[0]">
+                {{skill.Skname}}
+            </div>
+            <br>
+            Skill 2
+            <div *ngFor="let skill of s">
+                <input type="radio" name="deptid2" [value]="skill" [(ngModel)]="e.Eskill[1]">
+                {{skill.Skname}}
+            </div>
+
+        </div>
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>

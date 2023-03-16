@@ -1,0 +1,19 @@
+
+<p>Sample component</p>
+
+<div>
+    <form>
+        Enter the First Number: <br>
+        <input type="number" required name="first" [(ngModel)]="a" /><br>
+        <input type="number" required name="second" [(ngModel)]="b" /><br>
+        <input type="submit" value="Add" (click)="add()">
+    </form>
+</div>
+
+<h1 *ngIf="flag">The answer is {{c}}</h1>
+
+<input type="text" [(ngModel)]="studentname">
+{{studentname}}
+<br>
+
+<img height="200px" width="200px" [src]="image">

@@ -1,0 +1,30 @@
+<p>emplist works!</p>
+<!--{{e|json}}-->
+
+
+<table border="1" [cellPadding]="10" [cellSpacing]="10">
+    <tr>
+        <th>Eid</th>
+        <th>Ename</th>
+        <th>Salary</th>
+        <th>Date of Joining</th>
+        <th colspan="3">Department</th>
+        <th colspan="2">Skills</th>
+    </tr>
+
+    <tr *ngFor="let i of emps">
+        <td>{{i.Eid}}</td>
+        <td>{{i.Ename}}</td>
+        <td>{{i.Salary}}</td>
+        <td>{{i.Doj|date}}</td>
+        <td>{{i.Edept.Did}}</td>
+        <td>{{i.Edept.Dname}}</td>
+        <td>{{i.Edept.Dlocation}}</td>
+        <td *ngFor="let s of i.Eskill">
+            <li>
+                <ul>Skill ID: {{s.Skid}}</ul>
+                <ul>Skill: {{s.Skname}}</ul>
+            </li>
+        </td>
+    </tr>
+</table>
